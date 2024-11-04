@@ -1,0 +1,113 @@
+body {
+    overflow-x: hidden;
+}
+
+.criaçao-site {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.criaçao-site h1 {
+    text-align: center;
+}
+.criaçao-site div {
+    display: grid;
+    justify-content: center;
+}
+main div{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+#quem-somos {
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 40px; 
+    animation: aparecer 10s;
+}
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 3;
+    }
+}
+
+#quem-somos h2 {
+    margin-bottom: 20px; 
+}
+
+#quem-somos div {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    column-gap: 25px;
+    background-color: #f9f9f9; 
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+#quem-somos img {
+    width: 100%; 
+    height: auto; 
+}
+
+#quem-somos div {
+    padding: 20px; 
+}
+
+#quem-somos p {
+    font-size: 16px; 
+    line-height: 1.5; 
+    color: #666; 
+}
+
+#quem-somos div p:last-child {
+    margin-bottom: 0; 
+}
+#conteiner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    gap: 20px; 
+    max-width: 1280px;
+    margin: 0 auto;
+    margin-top: 40px; 
+}
+main #conteiner .projeto:hover{
+    box-shadow: 0 7px 10px 0 #787878;
+    transition: all 300ms ease-in-out 0s;
+}
+
+.projeto {
+    background-color: #fff; 
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.projeto a {
+    color: black;
+    text-decoration: none;
+}
+
+.projeto img {
+    width: 100%; 
+    border-radius: 6px; 
+    margin-bottom: 15px; 
+}
+.projeto h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px; 
+}
+
+.projeto p {
+    font-size: 0.9em; 
+    line-height: 1.4; 
+}
+
+
+           
+
