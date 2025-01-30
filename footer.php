@@ -14,7 +14,7 @@
 <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <img src="../assets/Lyn2.png" alt="Logo da Bike" class="logo-img">
+                <img src="./assets/Lyn2.png" alt="Logo da Bike" class="logo-img">
                 <div id="footer_social_media">
                     <a href="#" class="footer-link" id="instagram">
                         <i class="fa-brands fa-instagram"></i>

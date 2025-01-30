@@ -1,46 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>Cadastro de Cliente</h1>
-    <form action="index.php" method='post'>
-        nome <input type="text" name="nome"> <br>
-        telefone <input type="text" name="telefone"> <br>
-        email <input type="text" name="email"> <br>
-        senha <input type="password" name="senha"> <br>
-
-        <input type="submit" value="Enviar">
-
-    </form>
-</body>
-
-</html>
-
 <?php
+//Exibir o header
+include_once 'static/header.php';
 
-include_once __DIR__ . '/app/cliente/Cliente.php';
+// Aciona controlador
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST')
-{
+//Obter o controle e ação
+$control = $_GET['control'] ?? 'index';
+$action = $_GET['action'] ?? 'listar';
 
-    $cliente = new Cliente(null,$_POST['nome'],$_POST["telefone"],$_POST["email"],$_POST["senha"],);
+$controlClass =  ucfirst($control) . 'control';
 
-    if ($cliente->cadastrar())
-    {
-        echo "Cliente cadastrado com sucesso!";
+function loadControl{
+    $file = __DIR__ . '/app/' . $control . '/' . $controlClass . '.php';
+    if (file_exists($file)) {
+        include_once $file;
+    } else {
+        echo "Arquivo do controlador não encontrado.";
+        exit;
     }
-    else {
-        echo "Erro ao cadastrar o cliente!";
-    }
+}
 
+loadControl($control,$controlClass);
 
+if (class_exists($controlClass)) {
+    $controller = new $controlClass();
+
+    //passa os parâmetros (POST e GET)
+    $params =$array_merge($_POST, $_GET;
+
+    //Executa a ação
+    $controller->handleRequest($action, $params);
 
 }
 
-?>
+//Exibir o footer
+include_once 'static/footer.php';
