@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,6 +14,46 @@
 <body>
 
     <?php include('header.php'); ?>
+<main>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <img src="./assets/bike1.jpeg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike2.jpeg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike3.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike4.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike5.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike6.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike7.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike8.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike9.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike10.jpg" alt="">
+            </div>
+            <div class="carousel-slide">
+                <img src="./assets/bike11.jpg" alt="">
+            </div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </section>
+</main>
 
     <section id="tipos-bicicletas" class="blog">
         <h2>Modalidades de Ciclismo e Tipos de Bicicletas</h2>
