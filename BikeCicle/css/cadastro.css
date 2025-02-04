@@ -1,0 +1,262 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+
+form {
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;  
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+input[type="tel"], 
+input[type="date"], 
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+
+p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+p a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    form {
+        width: 90%;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+
+input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+label[for="termos"] {
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 10px;
+    color: #555;
+}
+
+
+label[for="termos"] {
+    font-size: 14px;
+    color: #555;
+}
+
+label[for="termos"] input[type="checkbox"] {
+    margin-right: 10px; 
+    vertical-align: middle;
+}
+
+label[for="termos"] a {
+    color: #4CAF50; 
+    text-decoration: none;
+}
+
+label[for="termos"] a:hover {
+    text-decoration: underline; 
+}
+
+
+footer {
+    background-color: #222; 
+    color: #fff;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+#footer_content {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin-bottom: 20px;
+}
+
+#footer_contacts h1 {
+    margin-bottom: 10px;
+}
+
+#footer_contacts p {
+    margin-bottom: 15px;
+}
+
+#footer_social_media {
+    display: flex;
+}
+
+#footer_social_media a {
+    margin-right: 10px;
+    color: #fff;
+    font-size: 18px;
+}
+
+.footer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 20%;
+}
+
+.footer-list li {
+    margin-bottom: 10px;
+}
+
+.footer-list h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+#footer_subscribe {
+    width: 30%;
+}
+
+#footer_subscribe h3 {
+    margin-bottom: 10px;
+}
+
+#footer_subscribe p {
+    margin-bottom: 15px;
+}
+
+#input_group {
+    display: flex;
+    align-items: center;
+}
+
+#input_group input {
+    padding: 10px;
+    width: 70%;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+#input_group button {
+    padding: 10px;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#footer_copyrigth {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+/*ajuste da logo no footer */
+#footer_contacts img {
+    width: 120px; 
+    height: auto; 
+    margin-bottom: 20px;
+}
+
+/* responsividade */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #footer_content, #footer_subscribe, .footer-list {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #footer_social_media {
+        justify-content: center;
+    }
+
+    #input_group input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    
+#input_group button {
+    padding: 10px;
+    background-color: #ff5722;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+    #footer_copyrigth {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,15 @@
+// JavaScript para o Carrossel
+let slideIndex = 0;
+const slides = document.querySelectorAll(".carousel-slide img");
+const totalSlides = slides.length;
+
+function showSlides() {
+    slideIndex++;
+    if (slideIndex >= totalSlides) {
+        slideIndex = 0;
+    }
+    const offset = -(slideIndex * 100 / totalSlides); // Move a imagem de acordo com o índice
+    document.querySelector(".carousel-slide").style.transform = `translateX(${offset}%)`;
+}
+
+setInterval(showSlides, 4000); // 4 segundos de intervalo entre cada slide
