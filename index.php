@@ -1,59 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <title>BikeCicle</title>
 </head>
+
 <body>
 
+    <!-- Incluir cabeçalho -->
     <?php include('header.php'); ?>
-<main>
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <img src="./assets/bike1.jpeg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike2.jpeg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike3.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike4.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike5.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike6.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike7.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike8.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike9.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike10.jpg" alt="">
-            </div>
-            <div class="carousel-slide">
-                <img src="./assets/bike11.jpg" alt="">
-            </div>
-        </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </section>
-</main>
+
+
 
     <section id="tipos-bicicletas" class="blog">
         <h2>Modalidades de Ciclismo e Tipos de Bicicletas</h2>
@@ -115,7 +83,89 @@
         </article>
     </section>
 
+    <!-- Serviços oferecidos -->
+    <section class="services-container">
+        <div class="service-card">
+            <i class="fas fa-tools service-icon"></i>
+            <h3>Manutenção</h3>
+            <p>Realizamos manutenção completa para garantir o melhor desempenho da sua bike.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-check-circle service-icon"></i>
+            <h3>Revisão</h3>
+            <p>Inspecionamos sua bicicleta para assegurar segurança e eficiência.</p>
+        </div>
+        <div class="service-card">
+            <i class="fas fa-cogs service-icon"></i>
+            <h3>Troca de Peças</h3>
+            <p>Substituímos peças desgastadas para manter sua bike sempre nova.</p>
+        </div>
+    </section>
+
+    <!-- Seção Quem Somos -->
+    <section id="quem-somos" class="sobre-nos">
+        <div class="container">
+            <div class="quem-somos-conteudo">
+                <div class="descricao">
+                    <h1 class="titulo">Quem Somos</h1>
+                    <p>Somos apaixonados por bicicletas e dedicados a proporcionar experiências incríveis aos ciclistas, oferecendo os melhores serviços para suas aventuras sobre duas rodas.</p>
+                </div>
+                <div class="foto">
+                    <img src="./assets/bike4.jpeg" alt="" class="imagem-quemsomos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="missao" class="missao">
+        <div class="container">
+            <h2 class="titulo">Nossa Missão</h2>
+            <p class="descricao">Nossa missão é mais do que apenas consertar bicicletas. Queremos unir ciclistas em uma comunidade que compartilha paixão, conhecimentos e aventuras sobre duas rodas.</p>
+
+
+            <div class="foto">
+                <img src="./assets/bike5.jpeg" alt="" class="imagem-missao">
+            </div>
+
+    </section>
+
+
+    <!-- Seção Valores -->
+    <section id="valores" class="valores">
+        <div class="container">
+            <h2 class="titulo">Nossos Valores</h2>
+            <div class="valores-container">
+                <div class="valor">
+                    <i class="fa fa-heart"></i>
+                    <h3>Paixão</h3>
+                    <p>Amamos o que fazemos e buscamos sempre oferecer o melhor para os nossos clientes e a comunidade de ciclistas.</p>
+                </div>
+                <div class="valor">
+                    <i class="fa fa-cogs"></i>
+                    <h3>Inovação</h3>
+                    <p>Investimos constantemente em novas tecnologias e soluções para melhorar a experiência dos ciclistas.</p>
+                </div>
+                <div class="valor">
+                    <i class="fa fa-users"></i>
+                    <h3>Comunidade</h3>
+                    <p>Acreditamos no poder da comunidade e trabalhamos para fomentar um ambiente colaborativo entre ciclistas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contato">
+        <div class="container">
+            <h2>Entre em Contato</h2>
+            <p>Tem dúvidas ou quer saber mais sobre nossos serviços? Entre em contato conosco! Estamos prontos para ajudar você.</p>
+            <a href="login.php" class="btn">Fale Conosco</a>
+        </div>
+    </section>
+
+    <!-- Incluir rodapé -->
     <?php include('footer.php'); ?>
 
 </body>
+
 </html>

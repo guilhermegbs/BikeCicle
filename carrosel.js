@@ -1,30 +1,29 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".carousel-slide");
-    const totalSlides = slides.length;
-    const container = document.querySelector(".carousel-container");
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider .slide');
+const totalSlides = slides.length;
 
-    function showSlide(index) {
-        if (index >= totalSlides) { slideIndex = 0; }
-        if (index < 0) { slideIndex = totalSlides - 1; }
-        
-        container.style.transform = `translateX(${-slideIndex * 100}%)`;
+// Função para mover para o próximo slide
+function nextSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % totalSlides; // Faz um loop no carrossel
+    slides[currentSlide].classList.add('active');
+}
+
+// Função para mover para o slide anterior
+function prevSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // Faz um loop no carrossel
+    slides[currentSlide].classList.add('active');
+}
+
+// Configura o intervalo de mudança automática a cada 5 segundos
+setInterval(nextSlide, 5000);
+
+// Exemplo de controles de navegação
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight') {
+        nextSlide();
+    } else if (e.key === 'ArrowLeft') {
+        prevSlide();
     }
-
-    function moveSlide(step) {
-        slideIndex += step;
-        showSlide(slideIndex);
-    }
-
-    // Botões de navegação
-    document.querySelector(".prev").addEventListener("click", () => moveSlide(-1));
-    document.querySelector(".next").addEventListener("click", () => moveSlide(1));
-
-    // Passagem automática das imagens a cada 5 segundos
-    setInterval(() => {
-        moveSlide(1);
-    }, 5000);
-
-    // Garante que o primeiro slide seja mostrado corretamente ao carregar a página
-    showSlide(slideIndex);
 });
