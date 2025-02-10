@@ -1,0 +1,30 @@
+<?php 
+include_once "config.php"; 
+
+// Verifica se os dados do formulário foram enviados
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = $_POST['nome']; 
+    $email = $_POST['email']; // Alteração para 'email' no $_POST
+    $senha = $_POST['senha']; 
+    $telefone = $_POST['telefone']; 
+    $data_nascimento = $_POST['data_nascimento']; 
+    $genero = $_POST['genero']; 
+
+    // SQL para inserir os dados no banco de dados
+    $sql = "INSERT INTO cliente(nome,email,senha,telefone,data_nascimento,genero) 
+            VALUES('$nome','$email','$senha','$telefone','$data_nascimento','$genero')";
+
+    // Verifica se o cadastro foi realizado com sucesso
+    if (mysqli_query($conn, $sql)) {
+        // Exibe a mensagem de sucesso
+        echo "<p style='color: green;'>Cadastro realizado com sucesso!</p>";
+        echo "<p><a href='dadosLogin.php'>Clique aqui para fazer login</a></p>";
+    } else {
+        // Caso ocorra erro, exibe a mensagem de erro
+        echo "<p style='color: red;'>Erro ao cadastrar: " . mysqli_error($conn) . "</p>";
+    }
+
+    // Fecha a conexão com o banco de dados
+    mysqli_close($conn);
+}
+?>

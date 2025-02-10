@@ -103,31 +103,22 @@
     </section>
 
     <!-- Seção Quem Somos -->
-    <section id="quem-somos" class="sobre-nos">
-        <div class="container">
-            <div class="quem-somos-conteudo">
-                <div class="descricao">
-                    <h1 class="titulo">Quem Somos</h1>
-                    <p>Somos apaixonados por bicicletas e dedicados a proporcionar experiências incríveis aos ciclistas, oferecendo os melhores serviços para suas aventuras sobre duas rodas.</p>
-                </div>
-                <div class="foto">
-                    <img src="./assets/bike4.jpeg" alt="" class="imagem-quemsomos">
-                </div>
+<section id="quem-somos" class="sobre-nos">
+    <div class="container">
+        <div class="quem-somos-conteudo">
+            <div class="descricao balao-esquerda">
+                <h1 class="titulo">Quem Somos</h1>
+                <p>Somos apaixonados por bicicletas e dedicados a proporcionar experiências incríveis aos ciclistas, oferecendo os melhores serviços para suas aventuras sobre duas rodas.</p>
+                <img src="./assets/bike4.jpeg" alt="Imagem da esquerda" class="imagem-balao">
+            </div>
+            <div class="descricao balao-direita">
+                <h2 class="titulo">Nossa Missão</h2>
+                <p>Nossa missão é mais do que apenas consertar bicicletas. Queremos unir ciclistas em uma comunidade que compartilha paixão, conhecimentos e aventuras sobre duas rodas.</p>
+                <img src="./assets/bike5.jpeg" alt="Imagem da direita" class="imagem-balao">
             </div>
         </div>
-    </section>
-
-    <section id="missao" class="missao">
-        <div class="container">
-            <h2 class="titulo">Nossa Missão</h2>
-            <p class="descricao">Nossa missão é mais do que apenas consertar bicicletas. Queremos unir ciclistas em uma comunidade que compartilha paixão, conhecimentos e aventuras sobre duas rodas.</p>
-
-
-            <div class="foto">
-                <img src="./assets/bike5.jpeg" alt="" class="imagem-missao">
-            </div>
-
-    </section>
+    </div>
+</section>
 
 
     <!-- Seção Valores -->
