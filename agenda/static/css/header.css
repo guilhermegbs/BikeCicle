@@ -1,0 +1,113 @@
+/* Header */
+header {
+    background-color: black;
+    color: #fff;
+    width: 100%;
+    height: 100px;
+    padding: 20px 40px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0 auto;
+    border-bottom: 2px solid #fff;
+}
+
+#LogoBike img {
+    height: 80px;
+    width: auto;
+}
+
+/* Menu */
+header nav {
+    display: flex;
+    justify-content: space-between; /* Deixa a logo à esquerda e o menu à direita */
+    align-items: center;
+    width: 100%;
+}
+
+/* Centraliza o menu */
+header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center; /* Centraliza os itens */
+    flex-grow: 1;
+}
+
+header nav ul li {
+    margin: 0 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+header nav ul li:hover {
+    font-size: 22px;
+    transform: scale(1.05);
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #1a4fbb;
+    transform: translateY(-3px);
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo do menu hamburguer */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-toggle i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Estilo para telas pequenas */
+@media (max-width: 768px) {
+    /* Ocultar o menu em telas pequenas */
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        padding: 20px;
+    }
+
+    /* Exibir o menu hamburguer */
+    .menu-toggle {
+        display: block;
+        margin-left: auto; /* Alinha o hamburguer à direita */
+    }
+
+    /* Estilo dos itens do menu */
+    header nav ul li {
+        margin: 10px 0;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    header nav ul li a {
+        padding: 10px 20px;
+        display: block;
+    }
+
+    /* Exibir o menu quando a classe 'active' for adicionada */
+    header nav ul.active {
+        display: flex;
+    }
+}
