@@ -4,7 +4,11 @@
 session_start();
 
 //Exibir o header
+<<<<<<< HEAD
 include_once 'header.php';
+=======
+include_once 'static/header.php';
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
 
 // Aciona controlador
 
@@ -41,4 +45,8 @@ if (class_exists($controlClass)) {
 
 
 //Exibir o footer
+<<<<<<< HEAD
 include_once 'footer.php';
+=======
+include_once 'static/footer.php';
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205

@@ -30,7 +30,10 @@ class IndexView
                     <div class='col-md-6 text-center'>
                         <h1 class='mb-4'>Bem-vindo ao AgendaAqui</h1>
                         <p class='lead mb-4'>Escolha uma opção para continuar:</p>
+<<<<<<< HEAD
                         
+=======
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
 
                          <!-- Botão para realizar auto cadastro -->
                         <a href='index.php?control=cliente&action=novo' class='btn btn-success btn-lg btn-block mb-3'>

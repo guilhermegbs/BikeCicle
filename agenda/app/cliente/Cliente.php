@@ -12,6 +12,10 @@ class Cliente {
     private $senha;
 
     // Método construtor
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
     public function __construct($id, $nome, $telefone, $email, $senha)
     {
         $this->id = $id;
@@ -21,7 +25,13 @@ class Cliente {
         $this->senha = $senha;
     }
 
+<<<<<<< HEAD
     // Método Get
+=======
+
+    // Método Get
+
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
     public function getId(){
         return $this->id;
     }
@@ -39,6 +49,10 @@ class Cliente {
     }
 
     // Métodos Set
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
     public function setId($id){
         $this->id = $id;
     }
@@ -56,28 +70,50 @@ class Cliente {
     }
 
     public function setSenha($senha){
+<<<<<<< HEAD
         $this->senha = $senha;
     }
 
     // Método de cadastro do cliente
     public function cadastrar(){
+=======
+        $this->id = $senha;
+    }
+
+
+    // Demais Métodos
+
+    public function cadastrar(){
+
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
         // Conectar com o banco de dados
         $db = new Database();
         $conn = $db->connect();
 
         // Salvar o cliente no banco de dados
+<<<<<<< HEAD
         $stmt = $conn->prepare("INSERT INTO cliente (nome, telefone, email, senha) VALUES (?,?,?,?)");
         $stmt->bind_param("ssss", $this->nome, $this->telefone, $this->email, $this->senha);
+=======
+        $stmt = $conn->prepare("INSERT INTO cliente (nome,telefone,email,senha) VALUES (?,?,?,?)");
+        $stmt->bind_param("ssss",$this->nome,$this->telefone,$this->email,$this->senha);
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
 
         if ($stmt->execute()) {
             $stmt->close();
             $db->closeConnection();
             return true;
+<<<<<<< HEAD
         } else {
+=======
+        }
+        else {
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
             $stmt->close();
             $db->closeConnection();
             return false;
         }
+<<<<<<< HEAD
     }
 
     // Método de login
@@ -172,3 +208,31 @@ class Cliente {
 }
 
 ?>
+=======
+
+
+    } 
+
+    public function atualizar(){
+
+    }
+
+    public function apagar(){
+
+    }
+
+    public function realizaLogin(){
+
+    }
+
+    public function buscarClientes(){
+
+    }
+
+
+}
+
+
+
+?>
+>>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
