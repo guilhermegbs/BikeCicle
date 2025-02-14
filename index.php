@@ -84,7 +84,7 @@
     </section>
 
     <!-- Serviços oferecidos -->
-    <section class="services-container">
+    <section id="servicos" class="services-container">
         <div class="service-card">
             <i class="fas fa-tools service-icon"></i>
             <h3>Manutenção</h3>

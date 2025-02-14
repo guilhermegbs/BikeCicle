@@ -1,7 +1,12 @@
 <?php
     $servidor = "localhost";
-    $dbususario = "root";
+    $dbusuario = "root"; // Correção no nome da variável
     $dbsenha = "";
-    $dbname = "agenda";
-    $conn = mysqli_connect($servidor,$dbususario,$dbsenha,$dbname);
+    $dbname = "aplicacao"; // Mude "agenda" para "aplicacao"
+    $conn = mysqli_connect($servidor, $dbusuario, $dbsenha, $dbname);
+
+    // Verificar conexão
+    if (!$conn) {
+        die("Falha na conexão: " . mysqli_connect_error());
+    }
 ?>

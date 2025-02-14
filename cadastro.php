@@ -1,32 +1,3 @@
-<?php
-include_once "config.php"; 
-
-// Verifica se o formulário foi enviado
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome']; 
-    $email = $_POST['email']; // Altere para 'email' sem o hífen
-    $senha = $_POST['senha']; 
-    $telefone = $_POST['telefone']; 
-    $data_nascimento = $_POST['data_nascimento']; 
-    $genero = $_POST['genero']; 
-
-    // Insere os dados no banco de dados
-    $sql = "INSERT INTO cliente(nome,email,senha,telefone,data_nascimento,genero) 
-            VALUES('$nome','$email','$senha','$telefone','$data_nascimento','$genero')";
-
-    // Verifica se a inserção foi bem-sucedida
-    if (mysqli_query($conn, $sql)) {
-        // Mensagem de sucesso
-        $mensagem = "<p style='color: green;'>Cadastro realizado com sucesso! <a href='login.php'>Clique aqui para fazer login.</a></p>";
-    } else {
-        // Mensagem de erro
-        $mensagem = "<p style='color: red;'>Erro ao cadastrar: " . mysqli_error($conn) . "</p>";
-    }
-
-    // Fecha a conexão com o banco de dados
-    mysqli_close($conn);
-}
-?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
