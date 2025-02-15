@@ -54,10 +54,10 @@
                 <option value="outro">Outro</option>
             </select><br>
 
-            <label for="termos">
+            <!-- <label for="termos">
                 <input type="checkbox" id="termos" name="termos" required>
                 Aceito os <a href="#" target="_blank">termos e condições</a>
-            </label><br>
+            </label><br> -->
 
             <button type="submit">Cadastrar</button>
         </form>

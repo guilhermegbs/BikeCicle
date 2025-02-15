@@ -14,6 +14,13 @@ $senha = password_hash($senha, PASSWORD_DEFAULT);
 // Prepara a consulta SQL para evitar injeção de SQL
 $stmt = $conn->prepare("INSERT INTO cliente (nome, email, senha, telefone, data_nascimento, genero) VALUES (?, ?, ?, ?, ?, ?)");
 
+// Verifica se a preparação foi bem-sucedida
+if ($stmt === false) {
+    // Exibe erro de preparação da consulta
+    echo "Erro ao preparar a consulta: " . $conn->error;
+    exit(); // Encerra a execução caso haja erro
+}
+
 // Vincula os parâmetros aos valores
 $stmt->bind_param("ssssss", $nome, $email, $senha, $telefone, $data_nascimento, $genero);
 

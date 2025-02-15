@@ -1,5 +1,6 @@
 <?php
 
+// Certifique-se de que o caminho para o arquivo de banco de dados está correto
 include_once __DIR__ . '../../database/Database.php';
 
 class Cliente {
@@ -7,232 +8,166 @@ class Cliente {
     // Atributos
     private $id;
     private $nome;
+    private $sobrenome;
+    private $data_nascimento;
+    private $genero;
     private $telefone;
     private $email;
     private $senha;
 
     // Método construtor
-<<<<<<< HEAD
-=======
-
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
-    public function __construct($id, $nome, $telefone, $email, $senha)
-    {
+    public function __construct($id, $nome, $sobrenome, $data_nascimento, $genero, $telefone, $email, $senha) {
         $this->id = $id;
         $this->nome = $nome;
+        $this->sobrenome = $sobrenome;
+        $this->data_nascimento = $data_nascimento;
+        $this->genero = $genero;
         $this->telefone = $telefone;
         $this->email = $email;
-        $this->senha = $senha;
+        //$this->senha = $senha;
+        // Aqui fazemos o hash da senha antes de armazená-la
+        $this->senha = password_hash($senha, PASSWORD_BCRYPT);
     }
 
-<<<<<<< HEAD
-    // Método Get
-=======
-
-    // Método Get
-
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
-    public function getId(){
+    // Métodos get
+    public function getId() {
         return $this->id;
     }
+     public function getNome() {
+    return $this->nome;
+    } 
 
-    public function getNome(){
-        return $this->nome;
+    public function getSobrenome() {
+        return $this->sobrenome;
     }
 
-    public function getTelefone(){
+        public function getData_nascimento() {
+        return $this->data_nascimento;
+    }
+        public function getGenero() {
+        return $this->genero;
+    }   
+
+    public function getTelefone() {
         return $this->telefone;
     }
 
-    public function getEmail(){
+    public function getEmail() {
         return $this->email;
     }
+        public function getSenha() {
+        return $this->senha;
+    }
 
-    // Métodos Set
-<<<<<<< HEAD
-=======
-
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
-    public function setId($id){
+    // Métodos set
+    public function setId($id) {
         $this->id = $id;
     }
 
-    public function setNome($nome){
+    public function setNome($nome) {
         $this->nome = $nome;
     }
+        public function setSobrenome($sobrenome) {
+        $this->sobrenome = $sobrenome;
+    }
+        public function setData_nascimento($data_nascimento) {
+        $this->data_nascimento = $data_nascimento;
+    }
+        public function setGenero($genero) {
+        $this->genero = $genero;
+    }
 
-    public function setTelefone($telefone){
+    public function setTelefone($telefone) {
         $this->telefone = $telefone;
     }
 
-    public function setEmail($email){
+    public function setEmail($email) {
         $this->email = $email;
     }
 
-    public function setSenha($senha){
-<<<<<<< HEAD
-        $this->senha = $senha;
+
+
+    //Este método também pode ser modificado para permitir alteração da senha
+    public function setSenha($senha) {
+        //Caso o usuário queira mudar a senha, aplicar o hash nela
+       $this->senha = password_hash($senha, PASSWORD_BCRYPT);
     }
 
-    // Método de cadastro do cliente
-    public function cadastrar(){
-=======
-        $this->id = $senha;
-    }
-
-
-    // Demais Métodos
-
-    public function cadastrar(){
-
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
+    // Método para cadastrar cliente
+    public function cadastrar() {
         // Conectar com o banco de dados
         $db = new Database();
         $conn = $db->connect();
 
-        // Salvar o cliente no banco de dados
-<<<<<<< HEAD
-        $stmt = $conn->prepare("INSERT INTO cliente (nome, telefone, email, senha) VALUES (?,?,?,?)");
-        $stmt->bind_param("ssss", $this->nome, $this->telefone, $this->email, $this->senha);
-=======
-        $stmt = $conn->prepare("INSERT INTO cliente (nome,telefone,email,senha) VALUES (?,?,?,?)");
-        $stmt->bind_param("ssss",$this->nome,$this->telefone,$this->email,$this->senha);
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
+        // Preparar e executar a query de inserção
+        $stmt = $conn->prepare("INSERT INTO cliente(nome, sobrenome, data_nascimento, genero, telefone, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $this->nome, $this->sobrenome, $this->data_nascimento, $this->genero, $this->telefone, $this->email, $this->senha);
 
+        // Executar e verificar o sucesso
         if ($stmt->execute()) {
             $stmt->close();
             $db->closeConnection();
             return true;
-<<<<<<< HEAD
         } else {
-=======
-        }
-        else {
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
             $stmt->close();
             $db->closeConnection();
             return false;
         }
-<<<<<<< HEAD
     }
 
-    // Método de login
-    public function realizaLogin(){
+    // Método para atualizar cliente (ainda não implementado)
+    public function atualizar() {
+         // Conectar com o banco de dados
+        $db = new Database();
+        $conn = $db->connect();
+
+        // Preparar para atualizar
+        $stmt = $conn->prepare("UPDATE cliente SET(nome, sobrenome, data_nascimento, genero, telefone, email, senha) VALUES (?, ?, ?, ?, ?, ?, ?)");
+        $stmt->bind_param("sssssss", $this->nome, $this->sobrenome, $this->data_nascimento, $this->genero, $this->telefone, $this->email, $this->senha);
+
+        // Executar e verificar o sucesso
+        if ($stmt->execute()) {
+            $stmt->close();
+            $db->closeConnection();
+            return true;
+        } else {
+            $stmt->close();
+            $db->closeConnection();
+            return false;
+        }
+    }
+
+    // Método para apagar cliente (ainda não implementado)
+    public function apagar() {
+        
+    }
+
+    // Método para realizar alguma ação (ainda não implementado)
+        public static function realizaLogin($email, $senha) {
         // Conectar com o banco de dados
         $db = new Database();
         $conn = $db->connect();
 
-        // Consulta para verificar o usuário no banco
-        $stmt = $conn->prepare("SELECT * FROM cliente WHERE email = ? AND senha = ?");
-        $stmt->bind_param("ss", $this->email, $this->senha);
+        $stmt = $conn->prepare("SELECT * FROM cliente WHERE email = ?");
+        $stmt->bind_param("s", $email);
         $stmt->execute();
         $result = $stmt->get_result();
 
-        if ($result->num_rows > 0) {
-            // Usuário encontrado, login bem-sucedido
-            $user = $result->fetch_assoc();
-            session_start();
-            $_SESSION['usuario_id'] = $user['id'];
-            $_SESSION['usuario_nome'] = $user['nome'];
-            $stmt->close();
-            $db->closeConnection();
-            return true; // Login bem-sucedido
-        } else {
-            // Caso o login falhe (usuário não encontrado)
-            $stmt->close();
-            $db->closeConnection();
-            return false; // Falha no login
-        }
-    }
-
-    // Método para buscar todos os clientes
-    public function buscarClientes(){
-        $db = new Database();
-        $conn = $db->connect();
-
-        $stmt = $conn->prepare("SELECT * FROM cliente");
-        $stmt->execute();
-        $result = $stmt->get_result();
-
-        $clientes = [];
-        while ($row = $result->fetch_assoc()) {
-            $clientes[] = $row;
+        if ($user = $result->fetch_assoc()) {
+           //if ($senha == $user['senha']) {
+                // Verifica a senha criptografada
+            if (password_verify($senha, $user['senha'])) {
+                // Autenticação bem-sucedida
+                $conn->close();
+                return new Cliente($user['id_cliente'], $user['nome'], $user['sobrenome'], $user['data_nascimento'], $user['genero'], $user['telefone'], $user['email'], $user['senha']);
+            }
         }
 
-        $stmt->close();
-        $db->closeConnection();
-        return $clientes;
+        $conn->close();
+        return false; // Falha na autenticação
+
     }
-
-    // Método para atualizar dados do cliente
-    public function atualizar(){
-        // Conectar com o banco de dados
-        $db = new Database();
-        $conn = $db->connect();
-
-        // SQL para atualizar os dados do cliente
-        $stmt = $conn->prepare("UPDATE cliente SET nome = ?, telefone = ?, email = ?, senha = ? WHERE id = ?");
-        $stmt->bind_param("ssssi", $this->nome, $this->telefone, $this->email, $this->senha, $this->id);
-
-        if ($stmt->execute()) {
-            $stmt->close();
-            $db->closeConnection();
-            return true;
-        } else {
-            $stmt->close();
-            $db->closeConnection();
-            return false;
-        }
-    }
-
-    // Método para apagar dados do cliente
-    public function apagar(){
-        // Conectar com o banco de dados
-        $db = new Database();
-        $conn = $db->connect();
-
-        // SQL para apagar o cliente
-        $stmt = $conn->prepare("DELETE FROM cliente WHERE id = ?");
-        $stmt->bind_param("i", $this->id);
-
-        if ($stmt->execute()) {
-            $stmt->close();
-            $db->closeConnection();
-            return true;
-        } else {
-            $stmt->close();
-            $db->closeConnection();
-            return false;
-        }
-    }
+    public function buscarClientes() {}
 }
 
 ?>
-=======
-
-
-    } 
-
-    public function atualizar(){
-
-    }
-
-    public function apagar(){
-
-    }
-
-    public function realizaLogin(){
-
-    }
-
-    public function buscarClientes(){
-
-    }
-
-
-}
-
-
-
-?>
->>>>>>> 1015e594b7f6086cff5bc772b245c164d9e42205
