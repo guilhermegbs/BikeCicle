@@ -2,41 +2,69 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./static/css/header.css">
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | BikeCicle</title>
+
+    <!-- Bootstrap CSS -->
     <link href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css' rel='stylesheet'>
+
+    <!-- Bootstrap JS (incluindo popper e bundle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- ìcones bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- CSS Personalizado -->
+    <link rel='stylesheet' href='<?= BASE_URL ?>/agenda/static/css/styles.css'>
+
+    <!-- Javascript -->
+    <script src="<?= BASE_URL ?>/agenda/static/js/scripts.js"></script>
+
+    <title>AgendaAqui - Agendamento de Serviços</title>
 </head>
 
-<body>
-    <header>
-        <div id="LogoBike">
-            <img src="./static/./img/Lyn2.png" alt="Logo da Bike" class="logo-img">
-        </div>
-        <nav>
-            <ul id="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="cadastro.php">Agende Agora</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#quem-somos">Sobre Nós</a></li>
+<body class="d-flex flex-column min-vh-100">
 
-            </ul>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i> <!-- Ícone do menu hamburguer -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="<?= BASE_URL ?>/agenda/">
+                    <img src="<?= BASE_URL ?>/agenda/static/img/logo_app.png" alt="Logo App" width="400px"> <!-- Logo -->
+                </a>
+                <!-- Menu de Navegação -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL ?>/agenda">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?= BASE_URL ?>/agenda/admin">Administração</a>
+                        </li>
+
+                        <?php if (isset($_SESSION['user_name'])): ?>
+                            <?php $primeiroNome = explode(' ', $_SESSION['user_name'])[0]; ?>
+                            <!-- Dropdown do Usuário -->
+                            <li class="nav-item dropdown d-flex align-items-center">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <!-- Ícone de usuário circular -->
+                                    <i class="bi bi-person-circle me-2" style="font-size: 1.3rem; line-height: 1;"></i>
+                                    <span><?= htmlspecialchars($primeiroNome) ?></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><a class="dropdown-item" href="#">Modificar Perfil</a></li>
+                                    <li><a class="dropdown-item" href="index.php?control=login&action=logout">Sair</a></li>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
+
+
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
 
-    <script>
-        const menuToggle = document.getElementById("mobile-menu");
-        const menu = document.getElementById("menu");
-        menuToggle.addEventListener("click", () => {
-            menu.classList.toggle("active");
-        });
-    </script>
-</body>
-
-</html>
+    <main class="flex-grow-1">

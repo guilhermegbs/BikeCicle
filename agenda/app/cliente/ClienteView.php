@@ -2,92 +2,45 @@
 
 class ClienteView
 {
-    public function exibirFormularioCadastro()
+    function exibirFormularioCadastro()
     {
-        // HTML para o formulário de cadastro de cliente
-        echo '
+        // HTML para o formulário de cadastro do cliente
+        echo "
+        <div class='container d-flex justify-content-center align-items-center' style='min-height: 80vh;'>
+            <div class='card p-4 shadow-lg' style='max-width: 400px; width: 100%;'>
+                <h3 class='text-center'>Cadastre-se</h3>
+                <form action='?control=cliente&action=cadastrar' method='post' enctype='multipart/form-data' class='row g-3'>
+                    <div class='col-12'>
+                        <label for='nome' class='form-label'>Nome:</label>
+                        <input type='text' id='nome' name='nome' class='form-control' required>
+                    </div>
+                    <div class='col-12'>
+                        <label for='telefone' class='form-label'>Telefone:</label>
+                        <input type='text' id='telefone' name='telefone' class='form-control'>
+                    </div>
+                    <div class='col-12'>
+                        <label for='email' class='form-label'>Endereço de Email:</label>
+                        <input type='email' id='email' name='email' class='form-control'>
+                    </div>
+                    <div class='col-12'>
+                        <label for='senha' class='form-label'>Senha:</label>
+                        <input type='password' id='senha' name='senha' class='form-control'>
+                    </div>
+                    <div class='col-12'>
+                        <button type='submit' class='btn btn-primary w-100'>Enviar</button>
+                    </div>
 
-        <!DOCTYPE html>
-        <html lang="pt-br">
-        
-        <head>
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-                integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-                crossorigin="anonymous" referrerpolicy="no-referrer" />
-            <link rel="stylesheet" href="./css/header.css">
-            <link rel="stylesheet" href="./css/footer.css">
-            <link rel="stylesheet" href="./css/cadastro.css">
-        
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Cadastro | BikeCicle</title>
-        </head>
-        
-        <body>
-        
-            
-        
-            <main>
-                <h1>Cadastro</h1>
-        
-                <!-- Exibe a mensagem de sucesso ou erro, se houver -->
-                <?php if (isset($mensagem)) {
-                    echo $mensagem;
-                } ?>
-        
-                <form action="?control=cliente&action=cadastrar" method="post">
-                    <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" placeholder="Ex: João da Silva" required><br>
-        
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required><br>
-        
-                    <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" placeholder="Crie uma senha" required><br>
-        
-                    <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" maxlength="15" required><br>
-        
-                    <!-- Link para o script JavaScript externo -->
-                    <script src="./js/telefone.js"></script>
-        
-                    <label for="data_nascimento">Data de nascimento:</label>
-                    <input type="date" id="data_nascimento" name="data_nascimento" required><br>
-        
-                    <label for="genero">Gênero:</label>
-                    <select id="genero" name="genero" required>
-                        <option value="masculino">Masculino</option>
-                        <option value="feminino">Feminino</option>
-                        <option value="outro">Outro</option>
-                    </select><br>
-        
-                    <!-- <label for="termos">
-                        <input type="checkbox" id="termos" name="termos" required>
-                        Aceito os <a href="#" target="_blank">termos e condições</a>
-                    </label><br> -->
-        
-                    <button type="submit">Cadastrar</button>
+                    <div class='mt-3 text-center'>
+                        <p>Já possui conta? <a href='?control=login'>Faça login</a></p>
+                    </div>
                 </form>
-                <p>Já tem uma conta? <a href="./login.php">Faça Login</a></p>
-        
-            </main>
-        
-            
-        
-        </body>
-        
-        </html>
-        
-        ';
-
-
-     
-        
+            </div>
+        </div>
+        ";
     }
-   function listarClientes()
-    {
 
+    function listarClientes()
+    {
         echo "<div class='container py-5'>";
         echo "<h3>Lista de Clientes</h3>";
         echo "<p>Aqui será exibida a lista de clientes cadastrados.</p>";

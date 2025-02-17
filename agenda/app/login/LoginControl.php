@@ -37,8 +37,13 @@ class LoginControl
                 $_SESSION['user_id'] = $cliente->getId();
                 $_SESSION['user_name'] = $cliente->getNome();
 
+                $_SESSION['message'] = [
+                    'text' => 'Bem vindo '. explode(' ', $_SESSION['user_name'])[0],
+                    'type' => 'success'
+                ];
+
                 // Redireciona para a página inicial ou outra protegida
-                header('Location: /agendaaqui/agenda');
+                header('Location: '. BASE_URL . '/agenda');
                 exit();
             } else {
                 // Exibe o formulário de login com mensagem de erro
@@ -54,7 +59,7 @@ class LoginControl
     {
         //session_start();
         session_destroy();
-        header('Location: index.php');
+        header('Location: '. BASE_URL . '/agenda');
         exit();
     }
 
