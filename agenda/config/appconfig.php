@@ -2,6 +2,4 @@
 
 define('BASE_URL', '/BikeCicle/');
 
-
-
 ?>

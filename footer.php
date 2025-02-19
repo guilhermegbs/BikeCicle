@@ -3,7 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel='stylesheet' href='<?= BASE_URL ?>/css/footer.css'>
+    <link rel="stylesheet" href="./css/footer.css">
+
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,16 +36,16 @@
             <div class="footer-links">
                 <ul class="footer-list">
                     <li><h3>Serviços</h3></li>
-                    <li><a href="<?= BASE_URL; ?>/agendamento" class="footer-link">Agendamento de Bicicletas</a></li>
-                    <li><a href="<?= BASE_URL; ?>/entrega" class="footer-link">Entrega e Coleta</a></li>
-                    <li><a href="<?= BASE_URL; ?>/manutencao" class="footer-link">Manutenção Rápida</a></li>
+                    <li><a href="agendamento" class="footer-link">Agendamento de Bicicletas</a></li>
+                    <li><a href="/entrega" class="footer-link">Entrega e Coleta</a></li>
+                    <li><a href="/manutencao" class="footer-link">Manutenção Rápida</a></li>
                 </ul>
 
                 <ul class="footer-list">
                     <li><h3>Suporte</h3></li>
-                    <li><a href="<?= BASE_URL; ?>/como-funciona" class="footer-link">Como Funciona</a></li>
-                    <li><a href="<?= BASE_URL; ?>/politica-privacidade" class="footer-link">Política de Privacidade</a></li>
-                    <li><a href="<?= BASE_URL; ?>/termos-uso" class="footer-link">Termos de Uso</a></li>
+                    <li><a href="como-funciona" class="footer-link">Como Funciona</a></li>
+                    <li><a href="politica-privacidade" class="footer-link">Política de Privacidade</a></li>
+                    <li><a href="termos-uso" class="footer-link">Termos de Uso</a></li>
                 </ul>
             </div>
 
