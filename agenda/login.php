@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+include_once __DIR__ . '/header.php';
+
 // Verifique se o usuário já está logado
 if (isset($_SESSION['usuario_id'])) {
     header("Location: dashboard.php"); // Redireciona para uma página segura
