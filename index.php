@@ -1,23 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>BikeCicle</title>
-</head>
-
-<body>
-
-    <?php include_once 'agenda/config/appconfig.php';
+<?php 
+    include_once 'agenda/config/appconfig.php';
     include_once 'header.php'; 
-    ?> 
+?> 
 
     <section id="tipos-bicicletas" class="blog">
         <h2>Modalidades de Ciclismo e Tipos de Bicicletas</h2>
@@ -100,12 +84,8 @@
         <div class="container">
             <h2>Entre em Contato</h2>
             <p>Tem dúvidas ou quer saber mais sobre nossos serviços? Entre em contato conosco! Estamos prontos para ajudar você.</p>
-            <a href="login.php" class="btn">Fale Conosco</a>
+            <a href="#" class="btn">Fale Conosco</a>
         </div>
     </section>
 
-    <?php include_once 'footer.php'; ?> <!-- Caminho direto -->
-
-</body>
-
-</html>
+    <?php include_once 'footer.php'; ?>

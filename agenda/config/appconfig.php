@@ -1,5 +1,5 @@
 <?php
 
-define('BASE_URL', '/BikeCicle/');
+define('BASE_URL', '/BikeCicle');
 
 ?>
