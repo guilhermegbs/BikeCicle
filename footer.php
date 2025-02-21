@@ -1,18 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="<?= BASE_URL ?>./css/footer.css">
-
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BikeCicle - Footer</title>
-</head>
-
-<body>
     <!-- Conteúdo do Footer -->
     <footer>
         <div id="footer_content">
@@ -36,16 +21,16 @@
             <div class="footer-links">
                 <ul class="footer-list">
                     <li><h3>Serviços</h3></li>
-                    <li><a href="agendamento" class="footer-link">Agendamento de Bicicletas</a></li>
-                    <li><a href="/entrega" class="footer-link">Entrega e Coleta</a></li>
-                    <li><a href="/manutencao" class="footer-link">Manutenção Rápida</a></li>
+                    <li><a href="<?= BASE_URL ?>/agenda" class="footer-link">Agende a Revisão na Bike</a></li>
+                    <li><a href="<?= BASE_URL ?>/agenda" class="footer-link">Manutenção</a></li>
+                    <li><a href="<?= BASE_URL ?>/agenda" class="footer-link">Troca de Peças</a></li>
                 </ul>
 
                 <ul class="footer-list">
                     <li><h3>Suporte</h3></li>
-                    <li><a href="como-funciona" class="footer-link">Como Funciona</a></li>
-                    <li><a href="politica-privacidade" class="footer-link">Política de Privacidade</a></li>
-                    <li><a href="termos-uso" class="footer-link">Termos de Uso</a></li>
+                    <li><a href="#" class="footer-link">Como Funciona</a></li>
+                    <li><a href="#" class="footer-link">Política de Privacidade</a></li>
+                    <li><a href="#" class="footer-link">Termos de Uso</a></li>
                 </ul>
             </div>
 
@@ -62,7 +47,7 @@
         </div>
 
         <div id="footer_copyrigth">
-            &#169; 2024 BikeCicle. Todos os direitos reservados.
+            &#169; 2025 BikeCicle. Todos os direitos reservados.
         </div>
     </footer>
 </body>
