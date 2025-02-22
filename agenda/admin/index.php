@@ -7,7 +7,7 @@ session_start();
 include_once '../config/appconfig.php';
 
 //Exibir o header
-include_once __DIR__ . './../../header.php';
+include_once __DIR__ . '/./../../header.php';
 
 // Aciona controlador
 
@@ -45,4 +45,4 @@ if (class_exists($controlClass)) {
 
 
 //Exibir o footer
-include_once __DIR__ . '/../../footer.php';
+include_once __DIR__ . '/./../../footer.php';
